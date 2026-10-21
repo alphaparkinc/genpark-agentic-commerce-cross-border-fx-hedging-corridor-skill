@@ -1,0 +1,68 @@
+{
+  "name": "genpark-agentic-commerce-cross-border-fx-hedging-corridor-skill",
+  "version": "1.0.0",
+  "title": "Cross-Border Multi-Currency FX Hedging & Netting Corridor Skill",
+  "description": "Rolling forward contract scheduler, value-at-risk (VaR) fx exposure, multi-currency cash flow netting, and slippage tolerance. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "agentic-commerce",
+  "topics": [
+    "fx-hedging",
+    "currency-risk",
+    "cash-flow-netting",
+    "cross-border-treasury",
+    "agentic-commerce",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_fx_value_at_risk",
+      "description": "Calculate 95% Parametric FX Value-at-Risk (VaR) on unhedged multi-currency receivables.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "unhedged_exposure_base_currency": {
+            "type": "number"
+          },
+          "currency_pair": {
+            "type": "string"
+          },
+          "historical_volatility_pct": {
+            "type": "number"
+          },
+          "horizon_days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "unhedged_exposure_base_currency",
+          "currency_pair"
+        ]
+      }
+    },
+    {
+      "name": "synthesize_forward_contract_netting_plan",
+      "description": "Net cross-border payables and receivables across EUR, GBP, JPY, and USD to minimize bank conversion spreads.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "receivables_usd": {
+            "type": "number"
+          },
+          "payables_eur": {
+            "type": "number"
+          },
+          "eur_usd_spot": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "receivables_usd",
+          "payables_eur",
+          "eur_usd_spot"
+        ]
+      }
+    }
+  ]
+}
